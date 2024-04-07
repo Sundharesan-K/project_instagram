@@ -9,8 +9,5 @@ java:S1948"*Make "adminDao" transient or serializable.(¢‰»«şÿÿÿÿ8êĞÇ–ê1J$7515
 java:S34007"9Remove this method and declare a constant for this value.(¸®Ã'8ğĞÇ–ê1J$86010f66-2d49-4941-8199-3335f511625f
 o
 java:S11726",Remove this unused method parameter "token".(æŞÉÃ8ñĞÇ–ê1J$71964166-3057-4a9f-8913-e1f90cd90c05
-~	java:S125I"<This block of commented-out lines of code should be removed.(ĞõùÆ8õĞÇ–ê1J$9e8d5d3f-3021-4cb9-9ac3-7c14d5bd1660
-}	java:S125X"<This block of commented-out lines of code should be removed.(¿à•8÷ĞÇ–ê1J$03560363-03ea-4157-9b29-67ab37abf90d
-~	java:S125^"<This block of commented-out lines of code should be removed.(×ìèÃ8÷ĞÇ–ê1J$e185da7e-4b78-4d37-97d8-474d87f987eb
 ‹
 java:S1128"HRemove this unused import 'org.springframework.context.annotation.Bean'.(‚î‰Ş8øĞÇ–ê1J$41b1e67d-f43a-4790-b637-5eb3bf095ccd

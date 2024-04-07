@@ -2,7 +2,10 @@ package com.app.instagram.entity;
 
 import com.app.instagram.dto.Gender;
 import com.app.instagram.dto.Status;
+import com.fasterxml.jackson.annotation.JsonInclude;
+import com.fasterxml.jackson.annotation.JsonInclude.Include;
 import java.time.LocalDateTime;
+import java.util.Collections;
 import java.util.List;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -20,17 +23,25 @@ public class UserProfile {
     private String username;
     private String emailId;
     private String password;
-    private String bio;
-    private String location;
-    private Gender gender;
-    private List<Post> postList;
-    private Integer postCount;
-    private Status status;
-    private List<String> followerList;
-    private Integer followerCount;
-    private List<String> followingList;
-    private Integer followingCount;
-    private boolean is_active;
+    private String bio = null;
+    private String location = null;
+    private Gender gender = null;
+    private List<Post> postList = Collections.EMPTY_LIST;
+    private Integer postCount = 0;
+    private Status status = Status.PUBLIC;
+    private List<String> followerList = Collections.EMPTY_LIST;
+    private Integer followerCount = 0;
+    private List<String> followingList = Collections.EMPTY_LIST;
+    private Integer followingCount = 0;
+    private boolean is_active = false;
     private LocalDateTime create_ts;
     private LocalDateTime updated_ts;
+
+    public UserProfile(Post post){
+        if (postList == null){
+            postList = Collections.EMPTY_LIST;
+        }
+        postList.add(post);
+        postCount = postList.size();
+    }
 }

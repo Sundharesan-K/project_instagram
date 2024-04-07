@@ -15,7 +15,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 //        http.authorizeRequests().anyRequest().permitAll().and().csrf().disable();
         http.authorizeRequests()
             // Specify URL patterns to match against and allow access to authenticated users
-            .antMatchers("/admin/**")
+            .antMatchers("/admin/**","/user/**")
             .permitAll()
             .antMatchers("/**")
             .authenticated()

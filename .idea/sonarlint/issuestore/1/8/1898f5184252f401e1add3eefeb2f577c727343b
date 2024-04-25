@@ -1,13 +1,13 @@
 
 Ž
-java:S2184"FCast one of the operands of this multiplication operation to a "long".(ˆà’ýûÿÿÿÿ8ÝÐÇ–ê1J$5666caa4-c1d1-4be5-b912-38e9257f2abc
+java:S2184"FCast one of the operands of this multiplication operation to a "long".(ˆà’ýûÿÿÿÿ8ÝÐÇ–ê1J$08ef4837-dbf8-4121-ab15-4aae61cc09a3
 “
-java:S1845"PRename field "secret" to prevent any misunderstanding/clash with field "SECRET".(Åç¶×8èÐÇ–ê1J$f0b2b13f-5b7a-4b2b-84fe-8e521c65d82a
-r
-java:S1948"*Make "adminDao" transient or serializable.(¢‰»«þÿÿÿÿ8êÐÇ–ê1J$751544ac-a273-429e-9196-11e12d4a9243
+java:S1845"PRename field "secret" to prevent any misunderstanding/clash with field "SECRET".(Åç¶×8èÐÇ–ê1J$1762a35c-5ff8-45bc-8e1d-6e30cc2dadb8
+L
+java:S1948"*Make "adminDao" transient or serializable.(¢‰»«þÿÿÿÿ8¤úŸ®î1
 {
-java:S34007"9Remove this method and declare a constant for this value.(¸®Ã'8ðÐÇ–ê1J$86010f66-2d49-4941-8199-3335f511625f
+java:S34007"9Remove this method and declare a constant for this value.(¸®Ã'8ðÐÇ–ê1J$4e6e15ff-5a0d-4da5-83ec-e6e9ffa9f267
 o
-java:S11726",Remove this unused method parameter "token".(æÞÉÃ8ñÐÇ–ê1J$71964166-3057-4a9f-8913-e1f90cd90c05
-‹
-java:S1128"HRemove this unused import 'org.springframework.context.annotation.Bean'.(‚î‰Þ8øÐÇ–ê1J$41b1e67d-f43a-4790-b637-5eb3bf095ccd
+java:S11726",Remove this unused method parameter "token".(æÞÉÃ8ñÐÇ–ê1J$d5ca5621-dc5e-4902-9df7-31c58f08d493
+e
+java:S1128"HRemove this unused import 'org.springframework.context.annotation.Bean'.(‚î‰Þ8´úŸ®î1

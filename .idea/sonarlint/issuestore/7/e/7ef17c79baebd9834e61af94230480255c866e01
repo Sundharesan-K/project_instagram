@@ -1,0 +1,13 @@
+
+	java:S112-"FDefine and throw a dedicated exception instead of using a generic one.(¯‚”èÿÿÿÿÿ8Ïòï€ï1J$fc27640e-ea50-4f90-97ae-f729c5a672df
+	java:S1129"FDefine and throw a dedicated exception instead of using a generic one.(àå½ƒüÿÿÿÿ8Ïòï€ï1J$5efaf934-0fc8-4364-bc71-062e9007ea85
+ˆ	java:S112<"FDefine and throw a dedicated exception instead of using a generic one.(ˆ± ø8Ïòï€ï1J$ca19eb06-4960-4dba-a83b-04b290ecc3cf
+	java:S112?"FDefine and throw a dedicated exception instead of using a generic one.(ŒÚ„§ÿÿÿÿÿ8Ïòï€ï1J$b3909665-9cad-461d-ade5-c5f542bfa253
+
+java:S3655I"JCall "post1.isPresent()" or "!post1.isEmpty()" before accessing the value.(›ÔÃš8åòï€ï1J$2a136187-5645-4b25-a17f-b68ecdb885cb
+
+java:S3655P"JCall "post1.isPresent()" or "!post1.isEmpty()" before accessing the value.(ıÒ™­8æòï€ï1J$e1d7d80a-af4f-4db0-bb71-1fdcf492d5c6
+‰
+java:S1128"FRemove this unused import 'com.app.instagram.entity.LikeType.DISLIKE'.(û…‰Ğ8öòï€ï1J$fb6ebeb0-b382-4f3e-bb54-e45723f6ab6f
+s
+java:S1128"+Remove this unused import 'java.util.List'.(Õë±Äøÿÿÿÿ8öòï€ï1J$c87f061c-baf7-4eb4-bfee-245586c85806

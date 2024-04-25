@@ -1,5 +1,4 @@
 
 ‡
-java:S1874"DRemove this use of "WebSecurityConfigurerAdapter"; it is deprecated.(Ë¶Ï“8Ïÿ ¡ë1J$84deed59-3722-4aa6-bf9e-34fc533987cf
-ˆ
-java:S1128"@Remove this unused import 'org.springframework.http.HttpMethod'.(Ê¨Ä¡øÿÿÿÿ8Öÿ ¡ë1J$e17182dd-0f0b-42d6-bf3c-d6592c7119b9
+java:S1874
+"DRemove this use of "WebSecurityConfigurerAdapter"; it is deprecated.(Ë¶Ï“8Ïÿ ¡ë1J$cea878fd-c3a8-4ebc-bdec-b0498f03e43b

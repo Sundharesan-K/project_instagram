@@ -1,7 +1,6 @@
 
-–	java:S116"TRename this field "create_ts" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(¤³³ø8Ä·Îõé1J$13a29a5a-7a3b-4ff7-88b8-dc902a8251c7
-u
-java:S1128"SRemove this unused import 'org.springframework.beans.factory.annotation.Autowired'.(¡ž¸Îùÿÿÿÿ8ÊŽÑ”ê1
-{
+›
+java:S1128"SRemove this unused import 'org.springframework.beans.factory.annotation.Autowired'.(¡ž¸Îùÿÿÿÿ8ÊŽÑ”ê1J$f20c5e28-5c90-40bd-a2e6-e81893eae4fe
+¡
 java:S1128
-"YRemove this unused import 'org.springframework.security.crypto.password.PasswordEncoder'.(‰¡ßáÿÿÿÿÿ8ËŽÑ”ê1
+"YRemove this unused import 'org.springframework.security.crypto.password.PasswordEncoder'.(‰¡ßáÿÿÿÿÿ8ËŽÑ”ê1J$9da5ad25-355e-43bf-9f5b-29ec37bdd5ea

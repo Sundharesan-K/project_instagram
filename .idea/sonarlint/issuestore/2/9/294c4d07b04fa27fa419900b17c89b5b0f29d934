@@ -1,16 +1,7 @@
 
 †
-java:S1596">Replace "Collections.EMPTY_LIST" by "Collections.emptyList()".(£©¿Úùÿÿÿÿ8¿Ÿ³ºë1J$eee08161-8a5a-47a1-bc8a-ddb5bc89bd5b
+java:S1596">Replace "Collections.EMPTY_LIST" by "Collections.emptyList()".(£©¿Úùÿÿÿÿ8ÑŸô¯î1J$efbf7675-7ac0-49d7-8246-c9bd4e5b9d83
 †
-java:S1596 ">Replace "Collections.EMPTY_LIST" by "Collections.emptyList()".(ÁßìÔúÿÿÿÿ8¿Ÿ³ºë1J$737ce489-ddd1-4359-a552-fc0e8bb6c9b3
+java:S1596">Replace "Collections.EMPTY_LIST" by "Collections.emptyList()".(ÁßìÔúÿÿÿÿ8ÒŸô¯î1J$064212ce-3882-4411-bf42-3d2ddf4f722c
 
-java:S1596"">Replace "Collections.EMPTY_LIST" by "Collections.emptyList()".(ºì¢¾8¿Ÿ³ºë1J$b3f3c944-dbce-4910-ab4d-80f9052d7ec6
-
-java:S1596*">Replace "Collections.EMPTY_LIST" by "Collections.emptyList()".(þ†ø³8ÀŸ³ºë1J$d6c6ecd8-785d-4580-b202-a37152f33886
-›	java:S116$"TRename this field "is_active" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Ž•ŒÉüÿÿÿÿ8ÆŸ³ºë1J$d81a29f0-fd25-443d-b267-581b1489b036
-–	java:S116%"TRename this field "create_ts" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(¤³³ø8ÆŸ³ºë1J$9fc6f024-f408-408c-a603-c8ee86b5924b
-—	java:S116&"URename this field "updated_ts" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ùž¼þ8ÆŸ³ºë1J$316394ec-6cb9-48ce-bcb9-afbcf6b50625
-Œ
-java:S1128"IRemove this unused import 'com.fasterxml.jackson.annotation.JsonInclude'.(þîÌ8‡ž»ë1J$e9035e7f-9706-42ed-b8f7-7bc8fee54955
-™
-java:S1128"QRemove this unused import 'com.fasterxml.jackson.annotation.JsonInclude.Include'.(¤Ðößúÿÿÿÿ8ˆž»ë1J$1251442e-ca70-4d1a-b1ba-c9d4f3cc4ea7
+java:S1596!">Replace "Collections.EMPTY_LIST" by "Collections.emptyList()".(ºì¢¾8ÒŸô¯î1J$e010df04-b917-48cb-91b3-fb98c8dbc905

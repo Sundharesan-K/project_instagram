@@ -1,5 +1,7 @@
 package com.app.instagram.service.impl;
 
+import static com.app.instagram.dto.Status.PRIVATE;
+
 import com.app.instagram.dao.UserDao;
 import com.app.instagram.dao.UserProfileDao;
 import com.app.instagram.dto.Gender;
@@ -78,18 +80,44 @@ public class UserProfileServiceImpl implements UserProfileService {
     public String setUp(String id, Map<Object, String> request) throws Exception {
         UserProfile userProfile = userProfileDao.findById(id);
         try {
-            if (Objects.nonNull(userProfile)){
+            if (Objects.nonNull(userProfile)) {
                 userProfile.setBio(request.get("bio"));
                 userProfile.setLocation(request.get("location"));
-                userProfile.setGender(Gender.valueOf(request.get("gender")));
+                String gender = request.get("gender").toUpperCase();
+                if ("MALE".equals(gender) || "FEMALE".equals(gender)) {
+                    userProfile.setGender(Gender.valueOf(gender));
+                } else {
+                    throw new Exception("Please enter a valid gender: male or female");
+                }
                 userProfile.set_active(true);
                 userProfile.setUpdated_ts(LocalDateTime.now());
                 userProfileDao.save(userProfile);
                 return "Successfully updated in profile";
-            }else {
+            } else {
                 throw new Exception("Username is incorrect");
             }
-        }catch (Exception e){
+        } catch (Exception e) {
+            throw new Exception(e.getMessage());
+        }
+    }
+
+    @Override
+    public String changeStatus(String id) throws Exception {
+        UserProfile userProfile = userProfileDao.findById(id);
+        try {
+            if (Objects.nonNull(userProfile)) {
+                if (userProfile.is_active()) {
+                    userProfile.setStatus(PRIVATE);
+                    userProfile.setUpdated_ts(LocalDateTime.now());
+                    userProfileDao.save(userProfile);
+                    return "Successfully change your status";
+                } else {
+                    throw new Exception("Profile is not active");
+                }
+            } else {
+                throw new Exception("Username is incorrect");
+            }
+        } catch (Exception e) {
             throw new Exception(e.getMessage());
         }
     }

@@ -1,7 +1,6 @@
 package com.app.instagram.dao.impl;
 
 import com.app.instagram.dao.AdminDao;
-import com.app.instagram.dto.AdminDto;
 import com.app.instagram.entity.Admin;
 import lombok.RequiredArgsConstructor;
 import org.springframework.data.mongodb.core.MongoTemplate;

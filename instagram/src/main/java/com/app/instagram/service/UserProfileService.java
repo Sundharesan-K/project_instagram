@@ -11,4 +11,6 @@ public interface UserProfileService {
     String userLogin(User user) throws Exception;
 
     String setUp(String id, Map<Object, String> request) throws Exception;
+
+    String changeStatus(String id) throws Exception;
 }

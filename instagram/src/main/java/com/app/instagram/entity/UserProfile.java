@@ -2,8 +2,6 @@ package com.app.instagram.entity;
 
 import com.app.instagram.dto.Gender;
 import com.app.instagram.dto.Status;
-import com.fasterxml.jackson.annotation.JsonInclude;
-import com.fasterxml.jackson.annotation.JsonInclude.Include;
 import java.time.LocalDateTime;
 import java.util.Collections;
 import java.util.List;
@@ -18,6 +16,7 @@ import org.springframework.data.mongodb.core.mapping.Document;
 @NoArgsConstructor
 @Document(collection = "user_profile")
 public class UserProfile {
+
     @Id
     private String id;
     private String username;
@@ -37,10 +36,7 @@ public class UserProfile {
     private LocalDateTime create_ts;
     private LocalDateTime updated_ts;
 
-    public UserProfile(Post post){
-        if (postList == null){
-            postList = Collections.EMPTY_LIST;
-        }
+    public void setPost(Post post) {
         postList.add(post);
         postCount = postList.size();
     }

@@ -19,8 +19,6 @@ public class UserProfileDaoImpl implements UserProfileDao {
 
     @Override
     public UserProfile findById(String id) {
-//        Query query = new Query();
-//        query.addCriteria(Criteria.where("id").is(id));
         return mongoTemplate.findById(id, UserProfile.class);
     }
 }

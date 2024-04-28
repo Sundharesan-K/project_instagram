@@ -1,5 +1,8 @@
 package com.app.instagram.service.impl;
 
+import static com.app.instagram.constant.MessageConstants.LIKE_EXITS_MESSAGE;
+import static com.app.instagram.constant.MessageConstants.POST_NOT_FOUND;
+import static com.app.instagram.constant.MessageConstants.USER_NOT_FOUND;
 import static com.app.instagram.entity.LikeType.DISLIKE;
 import static com.app.instagram.entity.LikeType.LIKE;
 
@@ -42,7 +45,7 @@ public class LikeServiceImpl implements LikeService {
                         likeDto.getPostId(), username);
                     if (Objects.nonNull(likePost) && likePost.getLikeType()
                         .equals(likeDto.getLikeType())) {
-                        throw new Exception("You already exists the like list");
+                        throw new Exception(LIKE_EXITS_MESSAGE);
                     }
                     UserProfile userProfile = userProfileDao.findById(post.getUserId());
                     Optional<Post> post1 = userProfile.getPostList().stream()
@@ -54,10 +57,10 @@ public class LikeServiceImpl implements LikeService {
                     userProfileDao.save(userProfile);
 
                 } else {
-                    throw new Exception("Post is not found");
+                    throw new Exception(POST_NOT_FOUND);
                 }
             } else {
-                throw new Exception("User is not found");
+                throw new Exception(USER_NOT_FOUND);
             }
         } catch (Exception e) {
             throw new Exception(e.getMessage());

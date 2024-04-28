@@ -2,7 +2,6 @@ package com.app.instagram.dao.impl;
 
 import com.app.instagram.dao.LikeDao;
 import com.app.instagram.entity.LikeAndDisLike;
-import com.app.instagram.entity.User;
 import lombok.RequiredArgsConstructor;
 import org.springframework.data.mongodb.core.MongoTemplate;
 import org.springframework.data.mongodb.core.query.Criteria;
@@ -12,6 +11,7 @@ import org.springframework.stereotype.Repository;
 @Repository
 @RequiredArgsConstructor
 public class LikeDaoImpl implements LikeDao {
+
     private final MongoTemplate mongoTemplate;
 
     @Override

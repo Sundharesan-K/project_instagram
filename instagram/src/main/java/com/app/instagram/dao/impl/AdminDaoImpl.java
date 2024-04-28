@@ -11,13 +11,14 @@ import org.springframework.stereotype.Repository;
 @Repository
 @RequiredArgsConstructor
 public class AdminDaoImpl implements AdminDao {
+
     private final MongoTemplate mongoTemplate;
 
     @Override
     public Admin findByEmailId(String emailId) {
         Query query = new Query();
         query.addCriteria(Criteria.where("emailId").is(emailId));
-        return mongoTemplate.findOne(query, Admin.class);
+        return mongoTemplate.findOne(query, getCollectionClassType());
     }
 
     @Override
@@ -25,4 +26,7 @@ public class AdminDaoImpl implements AdminDao {
         mongoTemplate.save(createAdmin);
     }
 
+    private Class<Admin> getCollectionClassType() {
+        return Admin.class;
+    }
 }

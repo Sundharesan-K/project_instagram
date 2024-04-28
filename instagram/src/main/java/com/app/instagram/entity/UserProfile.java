@@ -1,5 +1,7 @@
 package com.app.instagram.entity;
 
+import static com.app.instagram.dao.UserProfileDao.COLLECTION_NAME;
+
 import com.app.instagram.dto.Gender;
 import com.app.instagram.dto.Status;
 import java.time.LocalDateTime;
@@ -14,7 +16,7 @@ import org.springframework.data.mongodb.core.mapping.Document;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-@Document(collection = "user_profile")
+@Document(collection = COLLECTION_NAME)
 public class UserProfile {
 
     @Id

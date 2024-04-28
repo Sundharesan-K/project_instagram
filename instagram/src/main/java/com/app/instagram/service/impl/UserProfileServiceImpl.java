@@ -1,8 +1,17 @@
 package com.app.instagram.service.impl;
 
+import static com.app.instagram.constant.MessageConstants.INCORRECT_PASSWORD;
+import static com.app.instagram.constant.MessageConstants.INCORRECT_USER;
+import static com.app.instagram.constant.MessageConstants.LOGIN_SUCCESS;
+import static com.app.instagram.constant.MessageConstants.NOT_ACTIVE;
+import static com.app.instagram.constant.MessageConstants.USER_SUCCESS_MESSAGE;
+import static com.app.instagram.constant.MessageConstants.VALID_GENDER;
 import static com.app.instagram.dto.Status.PRIVATE;
 
 import com.app.instagram.dao.UserDao;
+
+import static com.app.instagram.constant.MessageConstants.EXISTS_MESSAGE;
+
 import com.app.instagram.dao.UserProfileDao;
 import com.app.instagram.dto.Gender;
 import com.app.instagram.dto.UserDTO;
@@ -39,7 +48,7 @@ public class UserProfileServiceImpl implements UserProfileService {
                 userDao.save(user);
                 return userDTO;
             } else {
-                throw new Exception("Already Exists");
+                throw new Exception(EXISTS_MESSAGE);
             }
         } catch (Exception e) {
             throw new Exception(e.getMessage());
@@ -54,12 +63,12 @@ public class UserProfileServiceImpl implements UserProfileService {
             if (Objects.nonNull(userByEmailId)) {
                 if (encoder.matches(user.getPassword(), userByEmailId.getPassword())) {
                     createUserProfile(user, userProfile, userByEmailId);
-                    return "Logged in success";
+                    return LOGIN_SUCCESS;
                 } else {
-                    throw new Exception("Password is incorrect");
+                    throw new Exception(INCORRECT_PASSWORD);
                 }
             } else {
-                throw new Exception("User emailId is incorrect");
+                throw new Exception(INCORRECT_USER);
             }
         } catch (Exception e) {
             throw new Exception(e.getMessage());
@@ -87,14 +96,14 @@ public class UserProfileServiceImpl implements UserProfileService {
                 if ("MALE".equals(gender) || "FEMALE".equals(gender)) {
                     userProfile.setGender(Gender.valueOf(gender));
                 } else {
-                    throw new Exception("Please enter a valid gender: male or female");
+                    throw new Exception(VALID_GENDER);
                 }
                 userProfile.set_active(true);
                 userProfile.setUpdated_ts(LocalDateTime.now());
                 userProfileDao.save(userProfile);
-                return "Successfully updated in profile";
+                return USER_SUCCESS_MESSAGE;
             } else {
-                throw new Exception("Username is incorrect");
+                throw new Exception(INCORRECT_USER);
             }
         } catch (Exception e) {
             throw new Exception(e.getMessage());
@@ -110,12 +119,12 @@ public class UserProfileServiceImpl implements UserProfileService {
                     userProfile.setStatus(PRIVATE);
                     userProfile.setUpdated_ts(LocalDateTime.now());
                     userProfileDao.save(userProfile);
-                    return "Successfully change your status";
+                    return USER_SUCCESS_MESSAGE;
                 } else {
-                    throw new Exception("Profile is not active");
+                    throw new Exception(NOT_ACTIVE);
                 }
             } else {
-                throw new Exception("Username is incorrect");
+                throw new Exception(INCORRECT_USER);
             }
         } catch (Exception e) {
             throw new Exception(e.getMessage());

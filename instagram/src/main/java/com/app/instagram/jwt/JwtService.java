@@ -11,16 +11,16 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.function.Function;
 import lombok.RequiredArgsConstructor;
-import org.springframework.context.annotation.Bean;
 import org.springframework.stereotype.Component;
 
 @Component
 @RequiredArgsConstructor
 public class JwtService implements Serializable {
+
     private final AdminDao adminDao;
     public static final String SECRET = "5367566B59703373367639792F423F4528482B4D6251655468576D5A71347437";
 
-    public static final long JWT_TOKEN_VALIDITY = 5*60*60;
+    public static final long JWT_TOKEN_VALIDITY = 5 * 60 * 60;
 
     private String secret = "54w65t5$$#$";
 
@@ -62,7 +62,7 @@ public class JwtService implements Serializable {
 
     public Boolean validateAdminToken(String token) {
         final String username = getUsernameFromToken(token);
-        return (adminDao.findByEmailId(username)!=null && !isTokenExpired(token));
+        return (adminDao.findByEmailId(username) != null && !isTokenExpired(token));
     }
 
     public String generateToken(String username, long validity) {
@@ -76,8 +76,9 @@ public class JwtService implements Serializable {
 //    }
 
     private String doGenerateToken(Map<String, Object> claims, String subject, long validity) {
-        return Jwts.builder().setClaims(claims).setSubject(subject).setIssuedAt(new Date(System.currentTimeMillis()))
-            .setExpiration(new Date(System.currentTimeMillis() + validity*1000)).signWith(
+        return Jwts.builder().setClaims(claims).setSubject(subject)
+            .setIssuedAt(new Date(System.currentTimeMillis()))
+            .setExpiration(new Date(System.currentTimeMillis() + validity * 1000)).signWith(
                 SignatureAlgorithm.HS512, secret).compact();
     }
 
@@ -90,12 +91,10 @@ public class JwtService implements Serializable {
 //        return (consumerDao.findConsumer(username)!=null && !isTokenExpired(token));
 //    }
 
-
 //    public Boolean validateAdminToken(String token) {
 //        final String username = getUsernameFromToken(token);
 //        return (adminDao.findAdminByUsername(username)!=null && !isTokenExpired(token));
 //    }
-
 
 
 }

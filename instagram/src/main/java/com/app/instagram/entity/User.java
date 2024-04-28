@@ -1,5 +1,7 @@
 package com.app.instagram.entity;
 
+import static com.app.instagram.dao.UserDao.COLLECTION_NAME;
+
 import java.time.LocalDateTime;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -10,7 +12,7 @@ import org.springframework.data.mongodb.core.mapping.Document;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-@Document(collection = "user")
+@Document(collection = COLLECTION_NAME)
 public class User {
 
     @Id

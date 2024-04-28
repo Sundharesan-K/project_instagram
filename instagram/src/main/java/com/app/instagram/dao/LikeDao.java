@@ -1,9 +1,10 @@
 package com.app.instagram.dao;
 
 import com.app.instagram.entity.LikeAndDisLike;
-import com.app.instagram.entity.User;
 
 public interface LikeDao {
+
+    String COLLECTION_NAME = "like&DisLike";
 
     LikeAndDisLike findByPostIdAndUsername(String postId, String username);
 

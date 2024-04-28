@@ -1,5 +1,7 @@
 package com.app.instagram.entity;
 
+import static com.app.instagram.dao.PostDao.COLLECTION_NAME;
+
 import com.app.instagram.dto.CommentDTO;
 import java.time.LocalDateTime;
 import java.util.Collections;
@@ -13,7 +15,7 @@ import org.springframework.data.mongodb.core.mapping.Document;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-@Document(collection = "posts")
+@Document(collection = COLLECTION_NAME)
 public class Post {
 
     @Id

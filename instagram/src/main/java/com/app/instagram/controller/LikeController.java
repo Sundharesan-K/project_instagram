@@ -1,5 +1,7 @@
 package com.app.instagram.controller;
 
+import static com.app.instagram.constant.APIEndPoint.API_LIKE;
+
 import com.app.instagram.dto.APIResponse;
 import com.app.instagram.dto.LikeDto;
 import com.app.instagram.service.LikeService;
@@ -13,20 +15,22 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-@RequestMapping("/like")
+@RequestMapping(API_LIKE)
 @RequiredArgsConstructor
 public class LikeController {
+
     private final LikeService likeService;
 
     @PostMapping("/{username}")
-    public ResponseEntity<APIResponse> likeAndDisLikePost(@PathVariable String username,@RequestBody LikeDto likeDto){
+    public ResponseEntity<APIResponse> likeAndDisLikePost(@PathVariable String username,
+        @RequestBody LikeDto likeDto) {
         APIResponse response = new APIResponse();
         try {
-            likeService.likeAndDisPost(likeDto,username);
+            likeService.likeAndDisPost(likeDto, username);
             return new ResponseEntity<>(HttpStatus.OK);
-        }catch (Exception e){
+        } catch (Exception e) {
             response.setMessage(e.getMessage());
-            return new ResponseEntity<>(response,HttpStatus.BAD_REQUEST);
+            return new ResponseEntity<>(response, HttpStatus.BAD_REQUEST);
         }
     }
 }

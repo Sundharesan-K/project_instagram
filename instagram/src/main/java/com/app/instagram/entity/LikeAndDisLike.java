@@ -1,5 +1,7 @@
 package com.app.instagram.entity;
 
+import static com.app.instagram.dao.LikeDao.COLLECTION_NAME;
+
 import java.time.LocalDateTime;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -12,7 +14,7 @@ import org.springframework.data.mongodb.core.mapping.Document;
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
-@Document(collection = "like&DisLike")
+@Document(collection = COLLECTION_NAME)
 public class LikeAndDisLike {
 
     @Id

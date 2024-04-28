@@ -1,5 +1,10 @@
 package com.app.instagram.controller;
 
+import static com.app.instagram.constant.APIEndPoint.ADD_ADMIN;
+import static com.app.instagram.constant.APIEndPoint.API_ADMIN;
+import static com.app.instagram.constant.APIEndPoint.CREATE_ADMIN;
+import static com.app.instagram.constant.APIEndPoint.LOGIN_ADMIN;
+
 import com.app.instagram.dto.APIResponse;
 import com.app.instagram.dto.AdminDto;
 import com.app.instagram.jwt.JwtService;
@@ -16,42 +21,46 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-@RequestMapping("/admin")
+@RequestMapping(API_ADMIN)
 @RequiredArgsConstructor
 @Slf4j
 public class AdminController {
+
     private final AdminService adminService;
     private final JwtService jwtService;
 
-    @PostMapping("/createAdmin")
-    public ResponseEntity<APIResponse> createAdmin(@RequestBody AdminDto adminDto)  {
+    @PostMapping(CREATE_ADMIN)
+    public ResponseEntity<APIResponse> createAdmin(@RequestBody AdminDto adminDto) {
         APIResponse response = new APIResponse();
         try {
             String message = adminService.createAdmin(adminDto);
             response.setMessage(message);
             return new ResponseEntity<>(response, HttpStatus.CREATED);
-        }catch (Exception e){
+        } catch (Exception e) {
             response.setMessage(e.getMessage());
             return new ResponseEntity<>(response, HttpStatus.CREATED);
         }
     }
-    @PostMapping("/loginAdmin")
-    public ResponseEntity<APIResponse> loginAdmin(@RequestBody AdminDto adminDto){
+
+    @PostMapping(LOGIN_ADMIN)
+    public ResponseEntity<APIResponse> loginAdmin(@RequestBody AdminDto adminDto) {
         APIResponse response = new APIResponse();
         try {
             String message = adminService.loginAdmin(adminDto);
             response.setMessage(message);
-            response.setData(jwtService.generateToken(adminDto,10 * 60));
+            response.setData(jwtService.generateToken(adminDto, 10 * 60));
             HttpHeaders headers = new HttpHeaders();
-            headers.set("jwttoken",jwtService.generateToken(adminDto,10 * 60));
-            return new ResponseEntity<>(response,headers,HttpStatus.OK);
-        }catch (Exception e){
+            headers.set("jwttoken", jwtService.generateToken(adminDto, 10 * 60));
+            return new ResponseEntity<>(response, headers, HttpStatus.OK);
+        } catch (Exception e) {
             response.setMessage(e.getMessage());
-            return new ResponseEntity<>(response,HttpStatus.OK);
+            return new ResponseEntity<>(response, HttpStatus.OK);
         }
     }
-    @PostMapping("/addAdmin")
-    public ResponseEntity<APIResponse> addAdmin(@RequestHeader("authorization") String auth, @RequestBody AdminDto adminDto){
+
+    @PostMapping(ADD_ADMIN)
+    public ResponseEntity<APIResponse> addAdmin(@RequestHeader("authorization") String auth,
+        @RequestBody AdminDto adminDto) {
         APIResponse response = new APIResponse();
         if (jwtService.validateAdminToken(auth)) {
             try {

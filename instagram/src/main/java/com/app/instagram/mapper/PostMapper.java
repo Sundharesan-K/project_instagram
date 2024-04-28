@@ -10,10 +10,11 @@ import org.mapstruct.MappingTarget;
 
 @Mapper(componentModel = "spring")
 public abstract class PostMapper {
-    @Mapping(target = "userId",source = "userId")
+
+    @Mapping(target = "userId", source = "userId")
 //    @Mapping(target = "create_ts", expression = "java.LocalDateTime.now()")
 //    @Mapping(target = "update_ts", expression = "java.LocalDateTime.now()")
-    public abstract Post mapToPost(PostDTO postDTO,String userId);
+    public abstract Post mapToPost(PostDTO postDTO, String userId);
 
     public abstract PostDTO mapToPostDTO(Post post);
 
